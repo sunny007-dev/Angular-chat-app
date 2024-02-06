@@ -1,0 +1,24 @@
+<div class="container">
+  <div id="chat-application">
+    <h2 class="p-3">Angular Chat Application</h2>
+    <div id="chat-window" *ngFor="let message of messageList">
+      <div id="output">
+        <p>{{message | json}}</p>
+      </div>
+      <!-- <div id="feedback"><p>feedback</p></div> -->
+    </div>
+
+    <div class="row justify-content-center m-0">
+
+      <div class="col-8">
+        <input placeholder="Enter message" [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()"
+/>
+      </div>
+    </div>
+    <div class="row justify-content-center py-3 m-0">
+      <div class="col-3 text-center">
+        <button class="btn btn-primary" type="button" id="send" style="cursor: pointer;" autocomplete="on" (click)="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
